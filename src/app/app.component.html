@@ -1,0 +1,38 @@
+<header>
+
+</header>
+<main>
+	<h2>Register</h2>
+	<form *ngIf="!submitted; else tplSuccess" #form="ngForm" (ngSubmit)="save()" novalidate>
+		<div class="row">
+			<label>Name*:</label>
+			<input #name="ngModel" type="text" [(ngModel)]="user.name" name="name" placeholder="Enter a name..." />
+			<div class="error" *ngIf="name.invalid && (name.dirty || name.touched || form.submitted)">Name is required</div>
+		</div>
+		<div class="row">
+			<label>Email*:</label>
+			<input #email="ngModel" type="text" [(ngModel)]="user.email" name="email"  placeholder="Enter a name..." required />
+			<div class="error" *ngIf="email.invalid && (name.dirty || email.touched || form.submitted)">Email is required</div>
+		</div>
+		<div class="row">
+			<label>Date of birth*:</label>
+			<input #date="ngModel" type="date" [(ngModel)]="user.ageInYears" name="ageInYears" placeholder="Select date of birth..." (ngModelChange)="validateBirthDate()" required />
+			<div class="error" *ngIf="date.invalid && (date.dirty || date.touched || form.submitted)">Your age must be between 25 and 60</div>
+		</div>
+
+		<div class="row row-button">
+			<input type="submit" value="Registerr" />
+		</div>
+	</form>
+
+	<ng-template #tplSuccess>
+		<div>
+			Thank you for your registration <em>{{this.user.email}}</em>.<br />
+			<br />
+			Please check the console for details.
+		</div>
+	</ng-template>
+</main>
+<footer>
+	&copy; Daisycon
+</footer>

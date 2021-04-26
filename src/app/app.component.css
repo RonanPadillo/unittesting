@@ -1,0 +1,70 @@
+h2 {
+	margin-top: 1rem;
+	width: 100%;
+	text-align: center;
+}
+
+h2 + form,
+h2 + div {
+	margin-left: auto;
+	margin-right: auto;
+	width: 25rem;
+	border: solid 1px black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 1rem;
+}
+
+@media (max-width: 500px) {
+	h2 + form,
+	h2 + div {
+		border-left: none;
+		border-right: none;
+		width: 100%;
+		margin: 0;
+	}
+}
+
+label {
+	font-weight: bold;
+	width: 10rem;
+	display: inline-block;
+}
+
+@media (max-width: 500px) {
+	label {
+		display: block;
+	}
+}
+
+input {
+	width: calc(100% - 11.5rem);
+	margin-left: 1rem;
+}
+
+@media (max-width: 500px) {
+	label {
+		display: block;
+	}
+}
+
+.row {
+	margin-bottom: 1rem;
+}
+
+.row-button {
+	text-align: right;
+}
+
+.error {
+	font-size: 80%;
+	color: red;
+	margin-top: 0.25rem;
+}
+
+footer {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+}
